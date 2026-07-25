@@ -1,0 +1,112 @@
+/* =========================================================
+   ZIPPAGE • Aneline Assis — Responsividade
+   Mobile First adjustments (breakpoints em cascata reversa
+   pois o style.css principal é desktop-first)
+========================================================= */
+
+/* ---------- Telas grandes / Notebook (<=1180px) ---------- */
+@media (max-width: 1180px) {
+  :root {
+    --fs-h1: 3rem;
+    --fs-h2: 2.3rem;
+    --space-2xl: 6rem;
+    --space-3xl: 8rem;
+  }
+  .hero__floating-card { left: -1rem; padding: var(--space-sm) var(--space-md); }
+}
+
+/* ---------- Tablet (<=980px) ---------- */
+@media (max-width: 980px) {
+  .header__inner { padding-top: var(--space-xs); padding-bottom: var(--space-xs); }
+  .header__toggle { display: flex; }
+
+  .nav {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100vh;
+    width: min(340px, 82vw);
+    background: var(--color-cream);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    transform: translateX(100%);
+    transition: transform var(--dur-med) var(--ease-soft);
+    box-shadow: -20px 0 50px -20px rgba(14,32,24,0.2);
+  }
+  .nav.is-open { transform: translateX(0); }
+  .nav__list { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .nav__list a { font-size: 1.05rem; }
+  .nav__cta { width: 100%; justify-content: center; }
+
+  .header__toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .header__toggle.is-active span:nth-child(2) { opacity: 0; }
+  .header__toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .hero__grid { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .hero__media { order: -1; max-width: 340px; margin: 0 auto; }
+  .hero__content { text-align: left; }
+  .hero__title, .hero__subtitle { max-width: 100%; }
+  .hero__floating-card { position: static; margin-top: var(--space-md); width: 100%; }
+  .hero__frame { max-width: 100%; }
+
+  .signs__grid { grid-template-columns: repeat(2, 1fr); }
+  .sign-card:nth-child(2), .sign-card:nth-child(5) { transform: none; }
+
+  .about__grid, .audience__grid { grid-template-columns: 1fr; }
+  .about__media, .audience__media { max-width: 340px; margin: 0 auto var(--space-lg); }
+  .about__badge { right: 0.5rem; bottom: -1.2rem; }
+
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+
+  .services__grid { grid-template-columns: 1fr 1fr; }
+  .service-card--featured { grid-column: span 2; }
+
+  .benefits__grid { grid-template-columns: 1fr; }
+  .benefits__list { grid-template-columns: repeat(2, 1fr); }
+
+  .clinic__photo, .clinic__photo--tall { min-height: 280px; }
+
+  .faq__grid { grid-template-columns: 1fr; }
+  .faq__intro { position: static; margin-bottom: var(--space-lg); }
+
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg) var(--space-md); }
+}
+
+/* ---------- Mobile (<=640px) ---------- */
+@media (max-width: 640px) {
+  :root {
+    --fs-h1: 2.3rem;
+    --fs-h2: 1.85rem;
+    --fs-h3: 1.5rem;
+    --space-2xl: 4rem;
+    --space-xl: 3.25rem;
+    --container-max: 100%;
+  }
+  .container { padding: 0 var(--space-sm); }
+
+  .hero { padding-top: 7.5rem; }
+  .hero__actions { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .btn { width: 100%; justify-content: center; }
+  .hero__actions .link-underline { align-self: center; }
+
+  .signs__grid { grid-template-columns: 1fr; }
+  .signs__note { font-size: 1.1rem; }
+
+  .timeline { grid-template-columns: 1fr; }
+
+  .services__grid { grid-template-columns: 1fr; }
+  .service-card--featured { grid-column: auto; }
+
+  .benefits__list { grid-template-columns: 1fr; }
+
+  .clinic__gallery { grid-template-columns: 1fr; }
+  .clinic__photo, .clinic__photo--tall { min-height: 260px; }
+
+  .footer__grid { grid-template-columns: 1fr; text-align: left; }
+  .footer__bottom { flex-direction: column; text-align: center; }
+
+  .whatsapp-float { width: 50px; height: 50px; bottom: var(--space-sm); right: var(--space-sm); }
+  .whatsapp-float svg { width: 22px; height: 22px; }
+}

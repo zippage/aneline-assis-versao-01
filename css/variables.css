@@ -1,0 +1,84 @@
+/* =========================================================
+   ZIPPAGE • Aneline Assis — Neuropsicopedagoga Clínica
+   Design Tokens
+   Paleta: branco (marca), verde profundo (marca), dourado (marca)
+   Tipografia: Playfair Display (títulos) + Poppins (corpo)
+========================================================= */
+
+:root {
+  /* ---------- Cor ---------- */
+  --color-white:        #FFFFFF;
+  --color-cream:         #FFFFFF;   /* fundo principal — branco puro, fiel à identidade da marca */
+  --color-cream-deep:    #EEF2EC;   /* fundo alternado — verde muito diluído (não bege) */
+
+  --color-green-900:     #08281A;   /* verde quase preto — CTA / rodapé */
+  --color-green-800:     #0E3B27;   /* verde profundo — cor da marca (extraída da logo #023A21) */
+  --color-green-700:     #1D4E38;   /* verde médio — hovers, ícones */
+  --color-green-100:     #E6EBE6;   /* verde muito claro — fundos suaves */
+
+  --color-gold-600:      #88652F;   /* dourado profundo — texto sobre claro (ajustado p/ contraste AA 4.5:1+) */
+  --color-gold-500:      #C6A75E;   /* dourado principal — linhas, ícones, botões */
+  --color-gold-300:      #D9C99A;   /* dourado claro — cor real da logo (#D6C98F) */
+  --color-gold-100:      #F3EEDF;   /* dourado quase branco */
+
+  --color-text:           #202821;  /* corpo de texto principal */
+  --color-text-soft:      #5C6A61;  /* texto secundário */
+  --color-text-inverse:   #F6F3EA;  /* texto sobre fundo escuro */
+  --color-text-inverse-soft: #B9C4BC;
+
+  --color-border:         #DCE6DA;
+
+  /* ---------- Tipografia ---------- */
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body:    'Poppins', 'Helvetica Neue', Arial, sans-serif;
+
+  --fs-eyebrow:   0.78rem;
+  --fs-body:      1rem;
+  --fs-body-lg:   1.125rem;
+  --fs-h5:        1.25rem;
+  --fs-h4:        1.6rem;
+  --fs-h3:        2.1rem;
+  --fs-h2:        2.75rem;
+  --fs-h1:        3.6rem;
+
+  --lh-tight: 1.15;
+  --lh-normal: 1.5;
+  --lh-loose: 1.75;
+
+  --ls-eyebrow: 0.18em;
+
+  /* ---------- Espaçamento ---------- */
+  --space-xxs: 0.4rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1.25rem;
+  --space-md:  2rem;
+  --space-lg:  3.25rem;
+  --space-xl:  5rem;
+  --space-2xl: 7.5rem;
+  --space-3xl: 10rem;
+
+  --container-max: 1280px;
+  --container-narrow: 760px;
+
+  /* ---------- Formas ---------- */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --radius-arch: 220px 220px 20px 20px; /* moldura em arco */
+  --radius-pill: 999px;
+
+  /* ---------- Sombra ---------- */
+  --shadow-soft: 0 10px 40px -12px rgba(14, 32, 24, 0.12);
+  --shadow-card: 0 18px 50px -18px rgba(14, 32, 24, 0.18);
+  --shadow-gold: 0 14px 34px -14px rgba(169, 130, 77, 0.35);
+
+  /* ---------- Transição ---------- */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 220ms;
+  --dur-med: 480ms;
+  --dur-slow: 820ms;
+
+  /* ---------- Camadas ---------- */
+  --z-header: 100;
+  --z-modal: 200;
+}
