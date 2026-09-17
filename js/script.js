@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initScrollReveal();
   initFaqAccordion();
+  initClinicCarousel();
   initFooterYear();
 });
 
@@ -102,6 +103,68 @@ function initFaqAccordion() {
       btn.setAttribute('aria-expanded', String(!isOpen));
       answer.style.maxHeight = isOpen ? null : `${answer.scrollHeight}px`;
     });
+  });
+}
+
+/* ---------- Consultório: carrossel de fotos ---------- */
+function initClinicCarousel() {
+  const carousel = document.querySelector('[data-carousel]');
+  if (!carousel) return;
+
+  const track = carousel.querySelector('[data-carousel-track]');
+  const slides = Array.from(carousel.querySelectorAll('[data-carousel-slide]'));
+  const prevBtn = carousel.querySelector('[data-carousel-prev]');
+  const nextBtn = carousel.querySelector('[data-carousel-next]');
+  const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+  if (!track || !slides.length) return;
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollBehavior = prefersReduced ? 'auto' : 'smooth';
+
+  // Cria os indicadores (dots), um por slide
+  const dots = slides.map((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'clinic__dot';
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Ir para foto ${i + 1} de ${slides.length}`);
+    dot.addEventListener('click', () => {
+      slides[i].scrollIntoView({ behavior: scrollBehavior, inline: 'center', block: 'nearest' });
+    });
+    dotsWrap.appendChild(dot);
+    return dot;
+  });
+
+  const setActive = (index) => {
+    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+  };
+
+  // Observa qual slide está mais visível para atualizar o dot ativo
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+          setActive(slides.indexOf(entry.target));
+        }
+      });
+    },
+    { root: track, threshold: [0.6] }
+  );
+  slides.forEach((slide) => observer.observe(slide));
+  setActive(0);
+
+  const scrollByDirection = (dir) => {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0');
+    track.scrollBy({ left: dir * (slideWidth + gap), behavior: scrollBehavior });
+  };
+
+  prevBtn?.addEventListener('click', () => scrollByDirection(-1));
+  nextBtn?.addEventListener('click', () => scrollByDirection(1));
+
+  // Navegação por teclado quando o carrossel está em foco
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') { e.preventDefault(); scrollByDirection(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByDirection(-1); }
   });
 }
 

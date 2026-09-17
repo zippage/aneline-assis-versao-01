@@ -118,8 +118,9 @@
         <span class="text-gold-italic">desenvolver todo o seu potencial.</span>
       </h1>
       <p class="hero__subtitle">
-        Avaliação, intervenção e orientação familiar conduzidas com escuta, técnica e acolhimento.
-        Para que cada criança encontre o seu próprio caminho de aprender.
+        Avaliação, intervenção e orientação familiar baseadas em evidências científicas,
+        conduzidas com escuta, técnica e acolhimento. Para que cada criança encontre o
+        seu próprio caminho de aprender.
       </p>
 
       <div class="hero__actions">
@@ -140,15 +141,11 @@
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento Particular</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Crianças e Adolescentes</li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento Presencial</li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Moema &amp; Vila Mariana — SP</li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Moema e Vila Mariana - SP</li>
         </ul>
       </div>
     </div>
   </div>
-
-  <a href="#sinais" class="hero__scroll-cue" aria-label="Rolar para próxima seção">
-    <span></span>
-  </a>
 </section>
 
 <!-- ============================================================
@@ -157,7 +154,7 @@
 <section class="section signs" id="sinais">
   <div class="container">
     <div class="section__head" data-reveal>
-      <p class="eyebrow">Identificação</p>
+      <p class="eyebrow eyebrow--gold">Identificação</p>
       <h2 class="section__title">Você percebe alguns destes sinais?</h2>
       <p class="section__lead">
         Muitas famílias chegam até a avaliação neuropsicopedagógica depois de perceber,
@@ -255,7 +252,7 @@
         </div>
         <div>
           <span class="about__stats-value">Presencial</span>
-          <span class="about__stats-label">Moema &amp; Vila Mariana</span>
+          <span class="about__stats-label">Moema e Vila Mariana</span>
         </div>
       </div>
     </div>
@@ -312,8 +309,8 @@
     </div>
 
     <div class="services__grid">
-      <article class="service-card service-card--featured" data-reveal>
-        <span class="service-card__index">01</span>
+      <article class="service-card" data-reveal>
+        <div class="service-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M20.5 20.5L27 27" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
         <h3>Avaliação Neuropsicopedagógica</h3>
         <p>
           Processo investigativo que identifica como a criança aprende, quais funções
@@ -323,7 +320,7 @@
       </article>
 
       <article class="service-card" data-reveal data-reveal-delay="1">
-        <span class="service-card__index">02</span>
+        <div class="service-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 24c3-9 8-14 12-14M17 10l4-1.5L20 13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 24c3-6 6-9 9-9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
         <h3>Intervenção Neuropsicopedagógica</h3>
         <p>
           Sessões estruturadas com estratégias específicas para desenvolver as funções
@@ -333,7 +330,7 @@
       </article>
 
       <article class="service-card" data-reveal data-reveal-delay="2">
-        <span class="service-card__index">03</span>
+        <div class="service-card__icon"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="11" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="22" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 26c1-5 5-8 8-8 2 0 3.5.8 4.6 2M17 26c.6-4 3.6-6.6 6.4-6.6 2.6 0 4.8 1.8 5.6 4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
         <h3>Orientação Familiar</h3>
         <p>
           Encontros com pais e responsáveis para alinhar estratégias, esclarecer dúvidas
@@ -411,7 +408,7 @@
     </div>
 
     <div class="audience__media" data-reveal data-reveal-delay="1">
-      <img src="assets/atendimento-1.jpg" alt="Atividade utilizada em sessões de intervenção" class="audience__photo">
+      <img src="assets/atendimento-leitura.jpg" alt="Criança realizando atividade de leitura em sessão de intervenção" class="audience__photo">
     </div>
   </div>
 </section>
@@ -430,11 +427,45 @@
       </p>
     </div>
 
-    <div class="clinic__gallery clinic__gallery--single">
-      <img src="assets/atendimento-2.jpg" alt="Ambiente do consultório de Aneline Assis" class="clinic__photo clinic__photo--tall" data-reveal>
+    <div class="clinic__carousel" data-carousel data-reveal>
+      <div class="clinic__track" data-carousel-track tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Fotos de atividades realizadas no consultório">
+
+        <figure class="clinic__slide" data-carousel-slide>
+          <img src="assets/consultorio-memoria.jpg" alt="Criança realizando atividade de sequência numérica para estímulo da memória de trabalho" loading="lazy">
+          <figcaption>Memória de trabalho</figcaption>
+        </figure>
+
+        <figure class="clinic__slide" data-carousel-slide>
+          <img src="assets/consultorio-escrita.jpg" alt="Criança escrevendo durante atividade de escrita dirigida" loading="lazy">
+          <figcaption>Produção escrita</figcaption>
+        </figure>
+
+        <figure class="clinic__slide" data-carousel-slide>
+          <img src="assets/atendimento-1.jpg" alt="Criança utilizando jogo de cartas em atividade de linguagem e atenção" loading="lazy">
+          <figcaption>Linguagem e atenção</figcaption>
+        </figure>
+
+        <figure class="clinic__slide" data-carousel-slide>
+          <img src="assets/consultorio-encaixe.jpg" alt="Criança realizando atividade de encaixe de peças coloridas" loading="lazy">
+          <figcaption>Coordenação e raciocínio</figcaption>
+        </figure>
+
+        <figure class="clinic__slide" data-carousel-slide>
+          <img src="assets/atendimento-2.jpg" alt="Criança montando quebra-cabeça durante sessão no consultório" loading="lazy">
+          <figcaption>Raciocínio lógico</figcaption>
+        </figure>
+
+      </div>
+
+      <button class="clinic__nav clinic__nav--prev" data-carousel-prev aria-label="Foto anterior" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="clinic__nav clinic__nav--next" data-carousel-next aria-label="Próxima foto" type="button">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+
+      <div class="clinic__dots" data-carousel-dots></div>
     </div>
-    <!-- Quando houver novas fotos do espaço, trocar clinic__gallery--single por
-         clinic__gallery (grid de 2) e adicionar a segunda <img> ao lado. -->
   </div>
 </section>
 
@@ -569,7 +600,7 @@
       <h4>Consultório</h4>
       <ul>
         <li>Avenida Ibirapuera, 2120</li>
-        <li>Moema — São Paulo, SP</li>
+        <li>Moema - São Paulo, SP</li>
         <li>Atendimento também na Vila Mariana</li>
       </ul>
     </div>
@@ -585,7 +616,7 @@
   </div>
 
   <div class="container footer__bottom">
-    <p>© <span id="year"></span> Aneline Assis — Neuropsicopedagoga Clínica. Todos os direitos reservados.</p>
+    <p>© <span id="year"></span> Aneline Assis - Neuropsicopedagoga Clínica. Todos os direitos reservados.</p>
     <p>Atendimento particular.</p>
   </div>
 </footer>

@@ -16,13 +16,14 @@
   --color-green-700:     #1D4E38;   /* verde médio — hovers, ícones */
   --color-green-100:     #E6EBE6;   /* verde muito claro — fundos suaves */
 
-  --color-gold-600:      #88652F;   /* dourado profundo — texto sobre claro (ajustado p/ contraste AA 4.5:1+) */
-  --color-gold-500:      #C6A75E;   /* dourado principal — linhas, ícones, botões */
-  --color-gold-300:      #D9C99A;   /* dourado claro — cor real da logo (#D6C98F) */
+  --color-gold-600:      #9C7920;   /* dourado — texto PEQUENO sobre claro (eyebrows/links). Contraste ~4,1:1 — abaixo do ideal técnico (4,5:1), decisão consciente da cliente para priorizar vibração da cor em texto curto/caixa-alta */
+  --color-gold-vivid:    #BC9420;   /* dourado vibrante — texto GRANDE sobre claro (destaque do h1). Contraste ~2,9:1 — mesma decisão acima, texto grande e em negrito compensa parte da perda de contraste */
+  --color-gold-500:      #E0A81A;   /* dourado principal — bem vibrante — linhas, ícones, botões (sem restrição de contraste de texto) */
+  --color-gold-300:      #F0C94A;   /* dourado claro vibrante — texto sobre fundo verde escuro, folga grande de contraste (~8:1) */
   --color-gold-100:      #F3EEDF;   /* dourado quase branco */
 
   --color-text:           #202821;  /* corpo de texto principal */
-  --color-text-soft:      #5C6A61;  /* texto secundário */
+  --color-text-soft:      #28302A;  /* texto secundário — grafite bem escuro, contraste AA 13,6:1 */
   --color-text-inverse:   #F6F3EA;  /* texto sobre fundo escuro */
   --color-text-inverse-soft: #B9C4BC;
 

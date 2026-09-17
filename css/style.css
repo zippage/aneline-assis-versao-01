@@ -59,8 +59,10 @@ p { color: var(--color-text-soft); }
 }
 .eyebrow::before {
   content: '';
-  width: 26px;
-  height: 1px;
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
   background: var(--color-gold-500);
   display: inline-block;
 }
@@ -69,8 +71,9 @@ p { color: var(--color-text-soft); }
 .eyebrow--gold-light::before { background: var(--color-gold-300); }
 
 .text-gold-italic {
+  /* Uso restrito a texto GRANDE (título/h1) — ver nota em variables.css */
   font-style: italic;
-  color: var(--color-gold-600);
+  color: var(--color-gold-vivid);
 }
 
 .section { padding: var(--space-2xl) 0; }
@@ -301,25 +304,6 @@ p { color: var(--color-text-soft); }
 }
 .check-list svg { width: 18px; height: 18px; color: var(--color-gold-500); flex-shrink: 0; }
 
-.hero__scroll-cue {
-  position: absolute; bottom: var(--space-lg); left: 50%;
-  transform: translateX(-50%);
-  width: 26px; height: 42px;
-  border: 1.5px solid var(--color-green-700);
-  border-radius: var(--radius-pill);
-  display: flex; justify-content: center; padding-top: 8px;
-}
-.hero__scroll-cue span {
-  width: 4px; height: 8px; border-radius: 2px;
-  background: var(--color-gold-500);
-  animation: scrollCue 1.8s infinite var(--ease-soft);
-}
-@keyframes scrollCue {
-  0% { transform: translateY(0); opacity: 1; }
-  70% { transform: translateY(10px); opacity: 0; }
-  100% { opacity: 0; }
-}
-
 /* ---------- Reveal on scroll ---------- */
 /* Visível por padrão: se o JS falhar/for bloqueado, o conteúdo continua
    acessível. .js-reveal-ready só é adicionada via script.js depois que o
@@ -337,7 +321,7 @@ p { color: var(--color-text-soft); }
 [data-reveal-delay="5"] { transition-delay: 0.5s; }
 
 /* ---------- Sinais de alerta ---------- */
-.signs { background: var(--color-cream-deep); }
+.signs { background: var(--color-white); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .signs__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -465,12 +449,12 @@ p { color: var(--color-text-soft); }
 /* ---------- Serviços ---------- */
 .services__grid {
   display: grid;
-  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
 .service-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
+  background: var(--color-green-800);
+  color: var(--color-text-inverse);
   border-radius: var(--radius-lg);
   padding: var(--space-xl) var(--space-lg);
   position: relative;
@@ -479,24 +463,21 @@ p { color: var(--color-text-soft); }
   display: flex; flex-direction: column;
 }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); }
-.service-card--featured {
-  background: var(--color-green-800);
-  color: var(--color-text-inverse);
-}
-.service-card--featured h3 { color: var(--color-text-inverse); }
-.service-card--featured p { color: var(--color-text-inverse-soft); }
-.service-card--featured .service-card__index { color: var(--color-gold-300); }
-.service-card--featured .service-card__link { color: var(--color-gold-300); }
+.service-card h3 { color: var(--color-text-inverse); }
+.service-card p { color: var(--color-text-inverse-soft); }
 
-.service-card__index {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  color: var(--color-gold-500);
+.service-card__icon {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-gold-300);
   margin-bottom: var(--space-md);
 }
+.service-card__icon svg { width: 26px; height: 26px; }
 .service-card h3 { font-size: 1.3rem; margin-bottom: var(--space-sm); }
 .service-card p { font-size: 0.95rem; flex-grow: 1; margin-bottom: var(--space-md); }
-.service-card__link { font-weight: 600; font-size: 0.9rem; color: var(--color-green-800); }
+.service-card__link { font-weight: 600; font-size: 0.9rem; color: var(--color-gold-300); }
 
 /* ---------- Benefícios ---------- */
 .benefits__grid {
@@ -516,7 +497,7 @@ p { color: var(--color-text-soft); }
 .benefit-item p { font-size: 0.88rem; }
 
 /* ---------- Para quem é ---------- */
-.audience { background: var(--color-cream-deep); }
+.audience { background: var(--color-white); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 .audience__grid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -547,28 +528,78 @@ p { color: var(--color-text-soft); }
   border: 6px solid var(--color-white);
 }
 
-/* ---------- Consultório ---------- */
-.clinic__gallery {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: var(--space-md);
-  align-items: stretch;
+/* ---------- Consultório — Carrossel ---------- */
+.clinic__carousel {
+  position: relative;
+  padding: 0 var(--space-2xl);
 }
-.clinic__photo {
+.clinic__track {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0 var(--space-sm);
+  scrollbar-width: none;
+}
+.clinic__track::-webkit-scrollbar { display: none; }
+.clinic__slide {
+  flex: 0 0 72%;
+  scroll-snap-align: center;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 16 / 10;
+  transition: box-shadow var(--dur-fast) var(--ease-soft);
+}
+.clinic__slide img {
   width: 100%;
   height: 100%;
-  min-height: 320px;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  display: block;
 }
-.clinic__photo--tall { min-height: 460px; }
-.clinic__gallery--single {
-  grid-template-columns: 1fr;
-  max-width: 640px;
-  margin: 0 auto;
+.clinic__slide figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  background: linear-gradient(to top, rgba(8, 40, 26, 0.85) 0%, transparent 100%);
+  color: var(--color-text-inverse);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
 }
-.clinic__gallery--single .clinic__photo--tall { min-height: 380px; }
+.clinic__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-card);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-green-800);
+  transition: background var(--dur-fast) var(--ease-soft), color var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+  z-index: 2;
+}
+.clinic__nav:hover { background: var(--color-gold-500); color: var(--color-green-900); transform: translateY(-50%) scale(1.06); }
+.clinic__nav svg { width: 20px; height: 20px; }
+.clinic__nav--prev { left: 0; }
+.clinic__nav--next { right: 0; }
+
+.clinic__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-md);
+}
+.clinic__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--color-border);
+  transition: background var(--dur-fast) var(--ease-soft), transform var(--dur-fast) var(--ease-soft);
+}
+.clinic__dot.is-active { background: var(--color-gold-500); transform: scale(1.35); }
 
 /* ---------- FAQ ---------- */
 .faq__grid {
