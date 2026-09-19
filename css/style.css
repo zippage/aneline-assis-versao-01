@@ -350,8 +350,10 @@ p { color: var(--color-text-soft); }
 .signs__note {
   margin-top: var(--space-xl);
   text-align: center;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-family: 'Lora', serif; /* trocada de Playfair para uma serifada feita p/ leitura — cliente pediu mais nitidez sem perder a elegância */
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.55;
   font-style: italic;
   color: var(--color-green-800);
   max-width: 700px;
@@ -421,9 +423,12 @@ p { color: var(--color-text-soft); }
 .timeline {
   position: relative; z-index: 1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-xl);
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .timeline__step {
   padding: var(--space-lg) var(--space-md) var(--space-md);
@@ -642,6 +647,49 @@ p { color: var(--color-text-soft); }
 .faq-item__a p { padding-bottom: var(--space-md); font-size: 0.95rem; line-height: var(--lh-loose); max-width: 560px; }
 
 /* ---------- CTA Final ---------- */
+/* ---------- Localização ---------- */
+.location__box {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+}
+.location__map {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  display: block;
+}
+.location__info {
+  background: var(--color-green-800);
+  color: var(--color-text-inverse);
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+}
+.location__address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--color-text-inverse);
+}
+.location__address svg { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; color: var(--color-gold-300); }
+.location__info .btn--outline {
+  border-color: var(--color-gold-300);
+  color: var(--color-text-inverse);
+  align-self: flex-start;
+}
+.location__info .btn--outline:hover { background: var(--color-gold-300); color: var(--color-green-900); }
+
 .cta-final {
   background: var(--color-green-900);
   padding: var(--space-2xl) 0;

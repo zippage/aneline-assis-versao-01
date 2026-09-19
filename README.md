@@ -99,6 +99,20 @@ Enviadas mas ainda não usadas em nenhuma seção (ficam disponíveis em
 - Fundos bege foram trocados por branco em todas as seções, a pedido da
   cliente, mantendo separação visual com uma borda sutil entre seções
   ao invés de contraste de cor.
+- "Como funciona o acompanhamento" tinha 4 etapas; a cliente pediu para
+  remover a última ("Acompanhamento") e reescrever os textos de
+  "Avaliação" e "Plano de intervenção". A grade foi ajustada de 4 para
+  3 colunas.
+- Seção "Como chegar" (`#localizacao`) adicionada perto do final da
+  página, com mapa incorporado do Google (endereço: Av. Ibirapuera,
+  2120, Moema/SP) e botão de rota. Fica antes do CTA final de propósito:
+  reforça viabilidade prática ("dá pra chegar fácil") bem no momento
+  antes do último pedido de agendamento — colocar depois do CTA
+  diluiria o impulso de conversão.
+- O texto "baseado em evidências científicas" (identidade que a cliente
+  quer reforçar) está na Hero e também na resposta da FAQ "Como funciona
+  a avaliação?" — dois pontos são suficientes para fixar a mensagem sem
+  repetir em excesso pela página.
 
 ## Antes de publicar
 
